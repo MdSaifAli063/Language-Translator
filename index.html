@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>A Language Translator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <ion-icon name="language-outline" aria-hidden="true"></ion-icon>
+        <h1>Language Translator</h1>
+      </div>
+
+      <div class="header-actions">
+        <label class="switch" title="Auto translate">
+          <input type="checkbox" id="auto-translate" />
+          <span class="slider"></span>
+          <span class="label">Auto</span>
+        </label>
+
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+          <ion-icon name="moon-outline"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="translator-card">
+        <div class="pane from-pane">
+          <div class="pane-header">
+            <div class="select-wrap">
+              <label for="from-lang" class="sr-only">From language</label>
+              <select id="from-lang" class="lang-select"></select>
+            </div>
+
+            <div class="pane-actions">
+              <button
+                class="icon-btn"
+                data-action="speak"
+                data-side="from"
+                title="Speak text"
+                aria-label="Speak source text"
+              >
+                <ion-icon name="volume-medium-outline"></ion-icon>
+              </button>
+              <button
+                class="icon-btn"
+                data-action="copy"
+                data-side="from"
+                title="Copy text"
+                aria-label="Copy source text"
+              >
+                <ion-icon name="copy-outline"></ion-icon>
+              </button>
+              <button
+                class="icon-btn"
+                data-action="clear"
+                data-side="from"
+                title="Clear"
+                aria-label="Clear source text"
+              >
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-area-wrap">
+            <label for="from-text" class="sr-only">Enter text</label>
+            <textarea
+              id="from-text"
+              class="text-area from-text"
+              placeholder="Enter text"
+              spellcheck="false"
+              maxlength="5000"
+            ></textarea>
+            <div class="meta">
+              <span id="char-count">0 / 5000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-controls">
+          <button id="swap" class="swap-btn" aria-label="Swap languages">
+            <ion-icon name="swap-horizontal-outline"></ion-icon>
+          </button>
+        </div>
+
+        <div class="pane to-pane">
+          <div class="pane-header">
+            <div class="select-wrap">
+              <label for="to-lang" class="sr-only">To language</label>
+              <select id="to-lang" class="lang-select"></select>
+            </div>
+
+            <div class="pane-actions">
+              <button
+                class="icon-btn"
+                data-action="speak"
+                data-side="to"
+                title="Speak translation"
+                aria-label="Speak translated text"
+              >
+                <ion-icon name="volume-medium-outline"></ion-icon>
+              </button>
+              <button
+                class="icon-btn"
+                data-action="copy"
+                data-side="to"
+                title="Copy translation"
+                aria-label="Copy translated text"
+              >
+                <ion-icon name="copy-outline"></ion-icon>
+              </button>
+              <button
+                class="icon-btn"
+                data-action="clear"
+                data-side="to"
+                title="Clear"
+                aria-label="Clear translated text"
+              >
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-area-wrap">
+            <label for="to-text" class="sr-only">Translation</label>
+            <textarea
+              id="to-text"
+              class="text-area to-text"
+              placeholder="Translation"
+              spellcheck="false"
+              readonly
+            ></textarea>
+            <div class="meta">
+              <span id="status" role="status" aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="translate-btn" class="primary-btn">
+          <span class="btn-label">Translate it</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="app-footer">
+      <p>
+        Free demo powered by MyMemory API. Results may be rate-limited or imperfect.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
