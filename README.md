@@ -62,7 +62,6 @@ No build steps. No API keys required.
 
 . ├── index.html # App markup ├── style.css # Beautiful, responsive UI styles ├── script.js # App logic (translate, TTS, auto, swap, etc.) └── docs/ └── screenshot-light.png # Optional screenshot for README
 
-
 ---
 
 ## 🧠 How It Works
