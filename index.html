@@ -1,184 +1,166 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>A Language Translator</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <title>A Language Translator</title>
 
-    <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Ionicons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-  </head>
+  <link rel="stylesheet" href="style.css" />
 
-  <body>
-    <header class="app-header">
-      <div class="brand">
-        <ion-icon name="language-outline" aria-hidden="true"></ion-icon>
-        <h1>Language Translator</h1>
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div class="bg-typography" aria-hidden="true">
+    <!-- Original ones -->
+    <span class="glyph" style="top: 10%; left: 10%; font-size: 140px; --delay: 0s;">A</span>
+    <span class="glyph" style="top: 25%; left: 85%; font-size: 180px; --delay: 2s;">あ</span>
+    <span class="glyph" style="top: 75%; left: 15%; font-size: 160px; --delay: 4s;">文</span>
+    <span class="glyph" style="top: 80%; left: 80%; font-size: 150px; --delay: 1s;">Ω</span>
+    <span class="glyph"
+      style="top: 45%; left: 50%; font-size: 260px; --delay: 3s; transform: translate(-50%, -50%);">ç</span>
+    <span class="glyph" style="top: 15%; left: 55%; font-size: 100px; --delay: 5s;">অ</span>
+    <span class="glyph" style="top: 60%; left: 90%; font-size: 120px; --delay: 2.5s;">ي</span>
+    <span class="glyph" style="top: 85%; left: 45%; font-size: 110px; --delay: 1.5s;">ñ</span>
+    <!-- New additions filling the screen -->
+    <span class="glyph" style="top: 5%; left: 35%; font-size: 90px; --delay: 1.2s;">G</span>
+    <span class="glyph" style="top: 55%; left: 10%; font-size: 130px; --delay: 3.5s;">Щ</span>
+    <span class="glyph" style="top: 30%; left: 25%; font-size: 150px; --delay: 0.5s;">語</span>
+    <span class="glyph" style="top: 90%; left: 25%; font-size: 110px; --delay: 2.2s;">B</span>
+    <span class="glyph" style="top: 15%; left: 75%; font-size: 100px; --delay: 4.5s;">∑</span>
+    <span class="glyph" style="top: 40%; left: 80%; font-size: 120px; --delay: 1.8s;">字</span>
+    <span class="glyph" style="top: 65%; left: 30%; font-size: 140px; --delay: 3.2s;">Ä</span>
+    <span class="glyph" style="top: 85%; left: 65%; font-size: 100px; --delay: 5.5s;">ह</span>
+    <span class="glyph" style="top: 50%; left: 5%; font-size: 80px; --delay: 0.8s;">ß</span>
+    <span class="glyph" style="top: 20%; left: 5%; font-size: 110px; --delay: 2.7s;">Z</span>
+    <span class="glyph" style="top: 70%; left: 60%; font-size: 130px; --delay: 1.1s;">K</span>
+    <span class="glyph" style="top: 35%; left: 65%; font-size: 160px; --delay: 4.1s;">म</span>
+    <span class="glyph" style="top: 95%; left: 5%; font-size: 120px; --delay: 3.8s;">א</span>
+    <span class="glyph" style="top: 5%; left: 95%; font-size: 140px; --delay: 1.9s;">R</span>
+    <span class="glyph" style="top: 95%; left: 95%; font-size: 130px; --delay: 2.9s;">ع</span>
+    <span class="glyph" style="top: 50%; left: 95%; font-size: 150px; --delay: 0.3s;">P</span>
+  </div>
+
+  <header class="app-header">
+    <div class="brand">
+      <ion-icon name="language-outline" aria-hidden="true"></ion-icon>
+      <h1>Language Translator</h1>
+    </div>
+
+    <div class="header-actions">
+      <label class="switch" title="Auto translate">
+        <input type="checkbox" id="auto-translate" />
+        <span class="slider"></span>
+        <span class="label">Auto</span>
+      </label>
+
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <ion-icon name="moon-outline"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="translator-card">
+      <div class="pane from-pane">
+        <div class="pane-header">
+          <div class="select-wrap">
+            <label for="from-lang" class="sr-only">From language</label>
+            <select id="from-lang" class="lang-select"></select>
+          </div>
+
+          <div class="pane-actions">
+            <button class="icon-btn" data-action="speak" data-side="from" title="Speak text"
+              aria-label="Speak source text">
+              <ion-icon name="volume-medium-outline"></ion-icon>
+            </button>
+            <button class="icon-btn" data-action="copy" data-side="from" title="Copy text"
+              aria-label="Copy source text">
+              <ion-icon name="copy-outline"></ion-icon>
+            </button>
+            <button class="icon-btn" data-action="clear" data-side="from" title="Clear" aria-label="Clear source text">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-area-wrap">
+          <label for="from-text" class="sr-only">Enter text</label>
+          <textarea id="from-text" class="text-area from-text" placeholder="Enter text" spellcheck="false"
+            maxlength="5000"></textarea>
+          <div class="meta">
+            <span id="char-count">0 / 5000</span>
+          </div>
+        </div>
       </div>
 
-      <div class="header-actions">
-        <label class="switch" title="Auto translate">
-          <input type="checkbox" id="auto-translate" />
-          <span class="slider"></span>
-          <span class="label">Auto</span>
-        </label>
-
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-          <ion-icon name="moon-outline"></ion-icon>
+      <div class="middle-controls">
+        <button id="swap" class="swap-btn" aria-label="Swap languages">
+          <ion-icon name="swap-horizontal-outline"></ion-icon>
         </button>
       </div>
-    </header>
 
-    <main class="container">
-      <section class="translator-card">
-        <div class="pane from-pane">
-          <div class="pane-header">
-            <div class="select-wrap">
-              <label for="from-lang" class="sr-only">From language</label>
-              <select id="from-lang" class="lang-select"></select>
-            </div>
-
-            <div class="pane-actions">
-              <button
-                class="icon-btn"
-                data-action="speak"
-                data-side="from"
-                title="Speak text"
-                aria-label="Speak source text"
-              >
-                <ion-icon name="volume-medium-outline"></ion-icon>
-              </button>
-              <button
-                class="icon-btn"
-                data-action="copy"
-                data-side="from"
-                title="Copy text"
-                aria-label="Copy source text"
-              >
-                <ion-icon name="copy-outline"></ion-icon>
-              </button>
-              <button
-                class="icon-btn"
-                data-action="clear"
-                data-side="from"
-                title="Clear"
-                aria-label="Clear source text"
-              >
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-            </div>
+      <div class="pane to-pane">
+        <div class="pane-header">
+          <div class="select-wrap">
+            <label for="to-lang" class="sr-only">To language</label>
+            <select id="to-lang" class="lang-select"></select>
           </div>
 
-          <div class="text-area-wrap">
-            <label for="from-text" class="sr-only">Enter text</label>
-            <textarea
-              id="from-text"
-              class="text-area from-text"
-              placeholder="Enter text"
-              spellcheck="false"
-              maxlength="5000"
-            ></textarea>
-            <div class="meta">
-              <span id="char-count">0 / 5000</span>
-            </div>
+          <div class="pane-actions">
+            <button class="icon-btn" data-action="speak" data-side="to" title="Speak translation"
+              aria-label="Speak translated text">
+              <ion-icon name="volume-medium-outline"></ion-icon>
+            </button>
+            <button class="icon-btn" data-action="copy" data-side="to" title="Copy translation"
+              aria-label="Copy translated text">
+              <ion-icon name="copy-outline"></ion-icon>
+            </button>
+            <button class="icon-btn" data-action="clear" data-side="to" title="Clear"
+              aria-label="Clear translated text">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
-        <div class="middle-controls">
-          <button id="swap" class="swap-btn" aria-label="Swap languages">
-            <ion-icon name="swap-horizontal-outline"></ion-icon>
-          </button>
-        </div>
-
-        <div class="pane to-pane">
-          <div class="pane-header">
-            <div class="select-wrap">
-              <label for="to-lang" class="sr-only">To language</label>
-              <select id="to-lang" class="lang-select"></select>
-            </div>
-
-            <div class="pane-actions">
-              <button
-                class="icon-btn"
-                data-action="speak"
-                data-side="to"
-                title="Speak translation"
-                aria-label="Speak translated text"
-              >
-                <ion-icon name="volume-medium-outline"></ion-icon>
-              </button>
-              <button
-                class="icon-btn"
-                data-action="copy"
-                data-side="to"
-                title="Copy translation"
-                aria-label="Copy translated text"
-              >
-                <ion-icon name="copy-outline"></ion-icon>
-              </button>
-              <button
-                class="icon-btn"
-                data-action="clear"
-                data-side="to"
-                title="Clear"
-                aria-label="Clear translated text"
-              >
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-            </div>
-          </div>
-
-          <div class="text-area-wrap">
-            <label for="to-text" class="sr-only">Translation</label>
-            <textarea
-              id="to-text"
-              class="text-area to-text"
-              placeholder="Translation"
-              spellcheck="false"
-              readonly
-            ></textarea>
-            <div class="meta">
-              <span id="status" role="status" aria-live="polite"></span>
-            </div>
+        <div class="text-area-wrap">
+          <label for="to-text" class="sr-only">Translation</label>
+          <textarea id="to-text" class="text-area to-text" placeholder="Translation" spellcheck="false"
+            readonly></textarea>
+          <div class="meta">
+            <span id="status" role="status" aria-live="polite"></span>
           </div>
         </div>
-      </section>
-
-      <div class="actions">
-        <button id="translate-btn" class="primary-btn">
-          <span class="btn-label">Translate it</span>
-          <span class="spinner" aria-hidden="true"></span>
-        </button>
       </div>
-    </main>
+    </section>
 
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div class="actions">
+      <button id="translate-btn" class="primary-btn">
+        <span class="btn-label">Translate it</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+    </div>
+  </main>
 
-    <footer class="app-footer">
-      <p>
-        Free demo powered by MyMemory API. Results may be rate-limited or imperfect.
-      </p>
-    </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js"></script>
-  </body>
+  <footer class="app-footer">
+    <p>
+      A Language Translator | By Md Saif Ali
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
