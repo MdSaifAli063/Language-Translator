@@ -10,7 +10,7 @@ Beautiful, responsive, and accessible web-based language translator with 50+ lan
 </p>
 
 <p align="center">
-  <img src="" alt="Screenshot - Light theme" width="85%"><br/>
+  <img src="https://github.com/MdSaifAli063/Language-Translator/blob/9c67c5d0893be5b17ca7710adf4816e18e6d8156/Screenshot%202026-07-07%20222830.png" alt="Screenshot - Light theme" width="85%"><br/>
 </p>
 
 ---
