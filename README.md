@@ -11,7 +11,6 @@ Beautiful, responsive, and accessible web-based language translator with 50+ lan
 
 <p align="center">
   <img src="" alt="Screenshot - Light theme" width="85%"><br/>
-  <img src="" alt="Screenshot - Dark theme" width="85%"><br/>
 </p>
 
 ---
