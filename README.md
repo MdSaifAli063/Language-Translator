@@ -11,7 +11,7 @@ Beautiful, responsive, and accessible web-based language translator with 50+ lan
 
 <p align="center">
   <img src="" alt="Screenshot - Light theme" width="85%"><br/>
-  <img src="https://github.com/MdSaifAli063/Language-Translator/blob/8f77b96d3c320caf223ee11d229047856998b862/Screenshot%202025-09-17%20004756.png" alt="Screenshot - Dark theme" width="85%"><br/>
+  <img src="" alt="Screenshot - Dark theme" width="85%"><br/>
   <em>Light & Dark theme — clean, modern UI</em>
 </p>
 
